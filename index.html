@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كيفان - لاستيراد وتجارة البن الأخضر</title>
+    <title>الوزير ستور</title>
     <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -50,7 +50,7 @@
             font-weight: 700;
         }
 
-        /* تنسيق الشعار (Slogan) */
+        /* الشعار */
         .slogan {
             font-size: 0.9rem;
             color: #4ade80;
@@ -59,7 +59,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* تنسيق العنوان البارز تحت الاسم */
+        /* العنوان البارز */
         .header-address {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -97,6 +97,171 @@
             transition: all 0.2s ease;
         }
 
-        /* زر فتح الخريطة (اللوكيشن) */
+        /* زر فتح الخريطة */
         .btn-location {
-            background: rgba(239
+            background: rgba(239, 68, 68, 0.12);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-location:hover {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        /* صف الأزرار الثنائية */
+        .row-btns {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-half {
+            flex: 1;
+            justify-content: center;
+            padding: 14px 10px;
+        }
+
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.15);
+            color: #25d366;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: #25d366;
+            color: #fff;
+        }
+
+        .btn-telegram {
+            background: rgba(0, 136, 204, 0.15);
+            color: #0088cc;
+            border: 1px solid rgba(0, 136, 204, 0.3);
+        }
+        .btn-telegram:hover {
+            background: #0088cc;
+            color: #fff;
+        }
+
+        .btn-facebook {
+            background: rgba(24, 119, 242, 0.15);
+            color: #1877f2;
+            border: 1px solid rgba(24, 119, 242, 0.3);
+        }
+        .btn-facebook:hover {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .btn-tiktok {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-tiktok:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .btn-phone {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* الصندوق الترويجي */
+        .promo-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 18px 15px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .promo-text {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .btn-promo {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            transition: 0.3s;
+        }
+        .btn-promo:hover {
+            background: #22c55e;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- تم ضبط اسم الصورة لتطابق اللي عندك logo.JPG -->
+        <img src="logo.JPG" alt="الوزير ستور" class="profile-img">
+        
+        <h1>الوزير ستور</h1>
+        
+        <p class="slogan">ثقة - أمان - توفير</p>
+
+        <div class="header-address">
+            <div><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> <strong>العنوان:</strong> الخصوص - شارع الجسر الغربي _ بجوار بنزينة الخصوص</div>
+        </div>
+
+        <div class="links-list">
+            
+            <a href="https://maps.app.goo.gl/9tm8z3fPvrWPwrwA9?g_st=ic" target="_blank" class="btn btn-location">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>فتح العنوان على خريطة جوجل</span>
+            </a>
+
+            <a href="tel:01009934519" class="btn btn-phone">
+                <i class="fa-solid fa-phone"></i>
+                <span>اتصال هاتفي (01009934519)</span>
+            </a>
+
+            <div class="row-btns">
+                <a href="https://wa.me/201228855105" target="_blank" class="btn btn-half btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+                    <span>واتساب</span>
+                </a>
+
+                <a href="https://t.me/201009934519" target="_blank" class="btn btn-half btn-telegram">
+                    <i class="fa-brands fa-telegram" style="font-size: 1.2rem;"></i>
+                    <span>تليجرام</span>
+                </a>
+            </div>
+
+            <div class="row-btns">
+                <a href="https://www.facebook.com/share/1E3Xb63cjq/?mibextid=wwXIfr" target="_blank" class="btn btn-half btn-facebook">
+                    <i class="fa-brands fa-facebook-f" style="font-size: 1.1rem;"></i>
+                    <span>فيسبوك</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@elwazer_store?_r=1&_t=ZS-9AJOR7JlZKP" target="_blank" class="btn btn-half btn-tiktok">
+                    <i class="fa-brands fa-tiktok" style="font-size: 1.1rem;"></i>
+                    <span>تيك توك</span>
+                </a>
+            </div>
+
+            <div class="promo-box">
+                <p class="promo-text">عجبك الستاند الذكي وحابب تعمل واحد لمشروعك؟ 🚀</p>
+                <a href="https://wa.me/201228855105?text=أهلاً ماضو، أريد عمل ستاند ذكي لمشروعي" target="_blank" class="btn-promo">
+                    ✨ احصل على ستاند ذكي لمشروعك الآن
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
