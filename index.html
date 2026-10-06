@@ -26,23 +26,23 @@
         .container {
             width: 100%;
             max-width: 420px;
-            background: rgba(20, 20, 18, 0.7);
+            background: rgba(20, 20, 18, 0.75);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.2); /* إطار ذهبي خفيف وراقي */
+            border: 1px solid rgba(212, 175, 55, 0.25);
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.08);
-            padding-bottom: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+            padding-bottom: 28px;
         }
 
-        /* بنر واجهة المحل */
+        /* تكبير واجهة المحل وظهورها بشكل أوسع وأوضح */
         .store-banner-box {
             width: 100%;
-            height: 180px;
+            height: 220px;
             background: #0d0d0c;
             position: relative;
-            border-bottom: 3px solid #d4af37; /* خط ذهبي فاخر */
+            border-bottom: 3px solid #d4af37;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,13 +53,13 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background-color: #050505;
+            background-color: #030303;
         }
 
         .content-area {
             padding: 0 20px;
             text-align: center;
-            margin-top: -35px;
+            margin-top: -30px;
             position: relative;
             z-index: 2;
         }
@@ -71,7 +71,7 @@
             background: #141412;
             border-radius: 50%;
             padding: 3px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* هالة ذهبية حول اللوجو */
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
         }
 
         .profile-img {
@@ -92,7 +92,7 @@
 
         .slogan {
             font-size: 0.88rem;
-            color: #d4af37; /* لون ذهبي ناصع للشعار */
+            color: #d4af37;
             font-weight: 700;
             margin-bottom: 14px;
             letter-spacing: 1.5px;
@@ -142,7 +142,6 @@
             border-color: rgba(212, 175, 55, 0.4);
         }
 
-        /* زر InstaPay بالاتساق الذهبي البنفسجي */
         .btn-instapay {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: #fff;
@@ -151,15 +150,14 @@
             border-color: rgba(212, 175, 55, 0.2);
         }
 
-        /* زر المحافظ */
         .btn-wallet {
             background: linear-gradient(135deg, #e11d48, #f43f5e);
             color: #fff;
             justify-content: center;
             gap: 10px;
+            border-color: rgba(212, 175, 55, 0.2);
         }
 
-        /* زر اللوكيشن بلمسة ذهبية حمراء */
         .btn-location {
             background: rgba(212, 175, 55, 0.08);
             color: #f1c40f;
@@ -236,7 +234,6 @@
             color: #000;
         }
 
-        /* بوكس الإستاند الذكي بلمعان ذهبي فخم */
         .promo-box {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(20, 20, 18, 0.9));
             border: 1px dashed rgba(212, 175, 55, 0.5);
@@ -309,30 +306,39 @@
             to { transform: scale(1); opacity: 1; }
         }
         .modal-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-bottom: 16px;
             color: #d4af37;
             font-weight: 700;
         }
         .number-option {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: block;
             background: rgba(212, 175, 55, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.15);
             color: #fff;
             padding: 12px;
             border-radius: 12px;
-            margin-bottom: 9px;
+            margin-bottom: 10px;
             text-decoration: none;
-            font-weight: 600;
+            text-align: right;
             transition: 0.2s;
         }
         .number-option:hover {
-            background: #d4af37;
-            color: #000;
+            background: rgba(212, 175, 55, 0.15);
             border-color: #d4af37;
+        }
+        .wallet-name {
+            font-weight: 700;
+            color: #f1c40f;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .wallet-details {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            display: flex;
+            justify-content: space-between;
         }
         .close-modal {
             background: transparent;
@@ -351,7 +357,7 @@
 <body>
 
     <div class="container">
-        <!-- بنر واجهة المحل الفخمة -->
+        <!-- بنر واجهة المحل المكبر والمنسق -->
         <div class="store-banner-box">
             <img src="store_front.jpg" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
         </div>
@@ -375,10 +381,11 @@
                     <span>الدفع الفوري عبر InstaPay</span>
                 </a>
 
-                <a href="tel:01009934519" class="btn btn-wallet">
+                <button onclick="openModal('wallets')" class="btn btn-wallet">
                     <i class="fa-solid fa-wallet"></i>
                     <span>تحويل فودافون كاش / المحافظ</span>
-                </a>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i>
+                </button>
 
                 <a href="https://maps.app.goo.gl/9tm8z3fPvrWPwrwA9?g_st=ic" target="_blank" class="btn btn-location">
                     <i class="fa-solid fa-map-location-dot"></i>
@@ -425,7 +432,7 @@
     <!-- نافذة الأرقام المنبثقة -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
-            <h3 id="modalTitle" class="modal-title">اختر الرقم للتواصل</h3>
+            <h3 id="modalTitle" class="modal-title">اختر</h3>
             <div id="modalOptions"></div>
             <button onclick="closeModal()" class="close-modal">إغلاق</button>
         </div>
@@ -435,6 +442,11 @@
         const phone1 = "201228855105";
         const phone2 = "201009934519";
 
+        const wallets = [
+            { name: "فودافون كاش", number: "01009934519", owner: "محمد أحمد" },
+            { name: "فودافون كاش", number: "01228855105", owner: "محمود أحمد" }
+        ];
+
         function openModal(type) {
             const modal = document.getElementById('contactModal');
             const title = document.getElementById('modalTitle');
@@ -442,17 +454,30 @@
             options.innerHTML = '';
             modal.style.display = 'flex';
 
-            if (type === 'whatsapp') {
+            if (type === 'wallets') {
+                title.innerText = "اختر محفظة لتحويل المبلغ:";
+                wallets.forEach(w => {
+                    options.innerHTML += `
+                        <a href="tel:${w.number}" class="number-option">
+                            <span class="wallet-name"><i class="fa-solid fa-wallet" style="color:#d4af37; margin-left:6px;"></i> ${w.name}</span>
+                            <div class="wallet-details">
+                                <span>الرقم: <strong>${w.number}</strong></span>
+                                <span>الاسم: <strong>${w.owner}</strong></span>
+                            </div>
+                        </a>
+                    `;
+                });
+            } else if (type === 'whatsapp') {
                 title.innerText = "اختر رقم الواتساب للتواصل:";
                 options.innerHTML = `
-                    <a href="https://wa.me/${phone1}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
-                    <a href="https://wa.me/${phone2}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
+                    <a href="https://wa.me/${phone1}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://wa.me/${phone2}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             } else if (type === 'telegram') {
                 title.innerText = "اختر الرقم للتواصل عبر التليجرام:";
                 options.innerHTML = `
-                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
-                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
+                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             }
         }
