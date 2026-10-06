@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
@@ -31,31 +31,43 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 28px;
-            overflow: hidden; /* عشان صورة الغلاف تاخد حواف الكارد المدوّرة */
+            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
 
-        /* واجهة المحل كصورة غلاف في أعلى الكارد */
+        /* بنر واجهة المحل العلوي */
+        .store-banner-box {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #1b3825, #0f2317);
+            position: relative;
+            border-bottom: 3px solid #22c55e;
+            overflow: hidden;
+        }
+
         .store-banner {
             width: 100%;
-            height: 160px;
+            height: 100%;
             object-fit: cover;
-            border-bottom: 3px solid #22c55e;
-            background-color: #1a2e22;
         }
 
         .content-area {
-            padding: 0 22px;
+            padding: 0 20px;
             text-align: center;
-            margin-top: -50px; /* تداخل اللوجو مع الغلاف بشكل شيك */
+            margin-top: -45px; /* تداخل اللوجو بانسجام تام مع البنر */
+            position: relative;
+            z-index: 2;
         }
 
         .profile-wrapper {
-            position: relative;
-            width: 105px;
-            height: 105px;
-            margin: 0 auto 15px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 12px;
+            background: #111e15;
+            border-radius: 50%;
+            padding: 3px;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
         }
 
         .profile-img {
@@ -63,40 +75,38 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #22c55e;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
             background-color: #fff;
         }
 
         h1 {
-            font-size: 1.75rem;
+            font-size: 1.7rem;
             margin-bottom: 4px;
             color: #ffffff;
             font-weight: 700;
         }
 
         .slogan {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #4ade80;
             font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
         }
 
         .header-address {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            margin-bottom: 22px;
+            font-size: 0.83rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             line-height: 1.5;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 10px 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .links-list {
@@ -109,50 +119,46 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 20px;
+            padding: 14px 18px;
             border-radius: 16px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         .btn-instapay {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: #fff;
-            border-color: rgba(124, 58, 237, 0.3);
             justify-content: center;
             gap: 10px;
-            font-size: 1rem;
         }
 
         .btn-wallet {
             background: linear-gradient(135deg, #e11d48, #f43f5e);
             color: #fff;
-            border-color: rgba(244, 63, 94, 0.3);
             justify-content: center;
             gap: 10px;
-            font-size: 1rem;
         }
 
         .btn-location {
-            background: rgba(239, 68, 68, 0.08);
+            background: rgba(239, 68, 68, 0.1);
             color: #f87171;
-            border-color: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.25);
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
         .btn-location:hover {
-            background: rgba(239, 68, 68, 0.2);
+            background: #ef4444;
             color: #fff;
         }
 
@@ -164,14 +170,14 @@
         .btn-half {
             flex: 1;
             justify-content: center;
-            padding: 14px 10px;
-            gap: 8px;
+            padding: 13px 8px;
+            gap: 6px;
         }
 
         .btn-whatsapp {
-            background: rgba(37, 211, 102, 0.08);
+            background: rgba(37, 211, 102, 0.1);
             color: #25d366;
-            border-color: rgba(37, 211, 102, 0.2);
+            border-color: rgba(37, 211, 102, 0.25);
         }
         .btn-whatsapp:hover {
             background: #25d366;
@@ -179,9 +185,9 @@
         }
 
         .btn-telegram {
-            background: rgba(0, 136, 204, 0.08);
+            background: rgba(0, 136, 204, 0.1);
             color: #38bdf8;
-            border-color: rgba(0, 136, 204, 0.2);
+            border-color: rgba(0, 136, 204, 0.25);
         }
         .btn-telegram:hover {
             background: #0088cc;
@@ -189,9 +195,9 @@
         }
 
         .btn-facebook {
-            background: rgba(24, 119, 242, 0.08);
+            background: rgba(24, 119, 242, 0.1);
             color: #60a5fa;
-            border-color: rgba(24, 119, 242, 0.2);
+            border-color: rgba(24, 119, 242, 0.25);
         }
         .btn-facebook:hover {
             background: #1877f2;
@@ -199,9 +205,9 @@
         }
 
         .btn-tiktok {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.12);
         }
         .btn-tiktok:hover {
             background: #ffffff;
@@ -209,11 +215,11 @@
         }
 
         .btn-phone {
-            background: rgba(16, 185, 129, 0.08);
+            background: rgba(16, 185, 129, 0.1);
             color: #34d399;
-            border-color: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.25);
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
         .btn-phone:hover {
             background: #10b981;
@@ -221,25 +227,24 @@
         }
 
         .promo-box {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(16, 185, 129, 0.1));
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(16, 185, 129, 0.12));
             border: 1px dashed rgba(34, 197, 94, 0.4);
-            border-radius: 18px;
-            padding: 18px 14px;
-            margin-top: 6px;
+            border-radius: 16px;
+            padding: 16px 12px;
+            margin-top: 4px;
             text-align: center;
         }
 
         .promo-text {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #e2e8f0;
-            margin-bottom: 12px;
-            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .btn-promo {
             background: linear-gradient(135deg, #16a34a, #22c55e);
             color: #fff;
-            padding: 12px;
+            padding: 11px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
@@ -253,11 +258,11 @@
         }
 
         footer {
-            margin-top: 24px;
-            font-size: 0.8rem;
+            margin-top: 22px;
+            font-size: 0.78rem;
             color: #64748b;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 16px;
+            padding-top: 14px;
         }
         footer span {
             color: #4ade80;
@@ -279,10 +284,10 @@
         .modal-content {
             background: #111a14;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 24px;
+            border-radius: 22px;
             width: 100%;
             max-width: 340px;
-            padding: 25px 20px;
+            padding: 24px 18px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             animation: scaleUp 0.3s ease;
@@ -292,8 +297,8 @@
             to { transform: scale(1); opacity: 1; }
         }
         .modal-title {
-            font-size: 1.05rem;
-            margin-bottom: 18px;
+            font-size: 1rem;
+            margin-bottom: 16px;
             color: #fff;
             font-weight: 600;
         }
@@ -305,9 +310,9 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: #fff;
-            padding: 13px;
-            border-radius: 14px;
-            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 9px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
@@ -320,9 +325,9 @@
             background: transparent;
             border: none;
             color: #94a3b8;
-            margin-top: 12px;
+            margin-top: 10px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
         .close-modal:hover {
@@ -333,20 +338,22 @@
 <body>
 
     <div class="container">
-        <!-- واجهة المحل كصورة غلاف في أعلى الموقع -->
-        <img src="store-front.JPG" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
+        <!-- بنر واجهة المحل العلوي -->
+        <div class="store-banner-box">
+            <img src="store-front.JPG" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
+        </div>
 
         <div class="content-area">
-            <!-- اللوجو الشخصي متداخل مع الغلاف بشكل فخم -->
+            <!-- اللوجو الشخصي متداخل بفخامة مع البنر -->
             <div class="profile-wrapper">
-                <img src="logo.JPG" alt="الوزير ستور" class="profile-img" onerror="this.src='https://via.placeholder.com/105?text=Logo'">
+                <img src="logo.JPG" alt="الوزير ستور" class="profile-img" onerror="this.src='https://via.placeholder.com/100?text=Logo'">
             </div>
             
             <h1>الوزير ستور</h1>
             <p class="slogan">ثقة - أمان - توفير</p>
 
             <div class="header-address">
-                <i class="fa-solid fa-location-dot" style="color: #ef4444; font-size: 1rem;"></i>
+                <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i>
                 <span>الخصوص - شارع الجسر الغربي _ بجوار بنزينة الخصوص</span>
             </div>
 
@@ -373,10 +380,10 @@
 
                 <div class="row-btns">
                     <button onclick="openModal('whatsapp')" class="btn btn-half btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> واتساب
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i> واتساب
                     </button>
                     <button onclick="openModal('telegram')" class="btn btn-half btn-telegram">
-                        <i class="fa-brands fa-telegram" style="font-size: 1.2rem;"></i> تليجرام
+                        <i class="fa-brands fa-telegram" style="font-size: 1.1rem;"></i> تليجرام
                     </button>
                 </div>
 
@@ -403,7 +410,7 @@
         </div>
     </div>
 
-    <!-- نافذة الأرقام -->
+    <!-- نافذة الأرقام المنبثقة -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <h3 id="modalTitle" class="modal-title">اختر الرقم للتواصل</h3>
