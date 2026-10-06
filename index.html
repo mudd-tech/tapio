@@ -14,7 +14,7 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #111e15 0%, #080c09 100%);
+            background: radial-gradient(circle at center, #141412 0%, #070807 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -26,35 +26,40 @@
         .container {
             width: 100%;
             max-width: 420px;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(20, 20, 18, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(212, 175, 55, 0.2); /* إطار ذهبي خفيف وراقي */
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.08);
             padding-bottom: 25px;
         }
 
+        /* بنر واجهة المحل */
         .store-banner-box {
             width: 100%;
-            height: 150px;
-            background: linear-gradient(135deg, #1b3825, #0d1f14);
+            height: 180px;
+            background: #0d0d0c;
             position: relative;
-            border-bottom: 3px solid #22c55e;
+            border-bottom: 3px solid #d4af37; /* خط ذهبي فاخر */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
         }
 
         .store-banner {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #050505;
         }
 
         .content-area {
             padding: 0 20px;
             text-align: center;
-            margin-top: -45px;
+            margin-top: -35px;
             position: relative;
             z-index: 2;
         }
@@ -63,10 +68,10 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 12px;
-            background: #111e15;
+            background: #141412;
             border-radius: 50%;
             padding: 3px;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* هالة ذهبية حول اللوجو */
         }
 
         .profile-img {
@@ -74,38 +79,39 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            background-color: #fff;
+            background-color: #000;
         }
 
         h1 {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             margin-bottom: 4px;
             color: #ffffff;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .slogan {
-            font-size: 0.85rem;
-            color: #4ade80;
-            font-weight: 600;
+            font-size: 0.88rem;
+            color: #d4af37; /* لون ذهبي ناصع للشعار */
+            font-weight: 700;
             margin-bottom: 14px;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
         .header-address {
             font-size: 0.83rem;
-            color: #cbd5e1;
+            color: #e2e8f0;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
             line-height: 1.5;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(212, 175, 55, 0.05);
             padding: 10px 12px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .links-list {
@@ -127,21 +133,25 @@
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
+        /* زر InstaPay بالاتساق الذهبي البنفسجي */
         .btn-instapay {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: #fff;
             justify-content: center;
             gap: 10px;
+            border-color: rgba(212, 175, 55, 0.2);
         }
 
+        /* زر المحافظ */
         .btn-wallet {
             background: linear-gradient(135deg, #e11d48, #f43f5e);
             color: #fff;
@@ -149,16 +159,17 @@
             gap: 10px;
         }
 
+        /* زر اللوكيشن بلمسة ذهبية حمراء */
         .btn-location {
-            background: rgba(239, 68, 68, 0.1);
-            color: #f87171;
-            border-color: rgba(239, 68, 68, 0.25);
+            background: rgba(212, 175, 55, 0.08);
+            color: #f1c40f;
+            border-color: rgba(212, 175, 55, 0.25);
             justify-content: center;
             gap: 8px;
         }
         .btn-location:hover {
-            background: #ef4444;
-            color: #fff;
+            background: #d4af37;
+            color: #000;
         }
 
         .row-btns {
@@ -174,7 +185,7 @@
         }
 
         .btn-whatsapp {
-            background: rgba(37, 211, 102, 0.1);
+            background: rgba(37, 211, 102, 0.08);
             color: #25d366;
             border-color: rgba(37, 211, 102, 0.25);
         }
@@ -184,7 +195,7 @@
         }
 
         .btn-telegram {
-            background: rgba(0, 136, 204, 0.1);
+            background: rgba(0, 136, 204, 0.08);
             color: #38bdf8;
             border-color: rgba(0, 136, 204, 0.25);
         }
@@ -194,7 +205,7 @@
         }
 
         .btn-facebook {
-            background: rgba(24, 119, 242, 0.1);
+            background: rgba(24, 119, 242, 0.08);
             color: #60a5fa;
             border-color: rgba(24, 119, 242, 0.25);
         }
@@ -204,7 +215,7 @@
         }
 
         .btn-tiktok {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             color: #ffffff;
             border-color: rgba(255, 255, 255, 0.12);
         }
@@ -214,20 +225,21 @@
         }
 
         .btn-phone {
-            background: rgba(16, 185, 129, 0.1);
-            color: #34d399;
-            border-color: rgba(16, 185, 129, 0.25);
+            background: rgba(212, 175, 55, 0.08);
+            color: #f39c12;
+            border-color: rgba(212, 175, 55, 0.25);
             justify-content: center;
             gap: 8px;
         }
         .btn-phone:hover {
-            background: #10b981;
-            color: #fff;
+            background: #d4af37;
+            color: #000;
         }
 
+        /* بوكس الإستاند الذكي بلمعان ذهبي فخم */
         .promo-box {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(16, 185, 129, 0.12));
-            border: 1px dashed rgba(34, 197, 94, 0.4);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(20, 20, 18, 0.9));
+            border: 1px dashed rgba(212, 175, 55, 0.5);
             border-radius: 16px;
             padding: 16px 12px;
             margin-top: 4px;
@@ -236,43 +248,45 @@
 
         .promo-text {
             font-size: 0.85rem;
-            color: #e2e8f0;
+            color: #fef08a;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .btn-promo {
-            background: linear-gradient(135deg, #16a34a, #22c55e);
-            color: #fff;
-            padding: 11px;
+            background: linear-gradient(135deg, #b8860b, #d4af37, #f39c12);
+            color: #000;
+            padding: 12px;
             border-radius: 12px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             display: block;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
             transition: 0.3s;
         }
         .btn-promo:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 6px 22px rgba(212, 175, 55, 0.7);
         }
 
         footer {
             margin-top: 22px;
             font-size: 0.78rem;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #888888;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
             padding-top: 14px;
         }
         footer span {
-            color: #4ade80;
-            font-weight: 600;
+            color: #d4af37;
+            font-weight: 700;
         }
 
+        /* نافذة الأرقام المنبثقة */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
@@ -280,14 +294,14 @@
             padding: 20px;
         }
         .modal-content {
-            background: #111a14;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #141412;
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 22px;
             width: 100%;
             max-width: 340px;
             padding: 24px 18px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 15px rgba(212, 175, 55, 0.1);
             animation: scaleUp 0.3s ease;
         }
         @keyframes scaleUp {
@@ -297,16 +311,16 @@
         .modal-title {
             font-size: 1rem;
             margin-bottom: 16px;
-            color: #fff;
-            font-weight: 600;
+            color: #d4af37;
+            font-weight: 700;
         }
         .number-option {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             color: #fff;
             padding: 12px;
             border-radius: 12px;
@@ -316,13 +330,14 @@
             transition: 0.2s;
         }
         .number-option:hover {
-            background: #22c55e;
-            border-color: #22c55e;
+            background: #d4af37;
+            color: #000;
+            border-color: #d4af37;
         }
         .close-modal {
             background: transparent;
             border: none;
-            color: #94a3b8;
+            color: #aaa;
             margin-top: 10px;
             cursor: pointer;
             font-size: 0.85rem;
@@ -336,7 +351,7 @@
 <body>
 
     <div class="container">
-        <!-- تم تعديل اسم الصورة لتطابق اللي عندك في جيثب store_front.jpg -->
+        <!-- بنر واجهة المحل الفخمة -->
         <div class="store-banner-box">
             <img src="store_front.jpg" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
         </div>
@@ -350,7 +365,7 @@
             <p class="slogan">ثقة - أمان - توفير</p>
 
             <div class="header-address">
-                <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i>
+                <i class="fa-solid fa-location-dot" style="color: #d4af37;"></i>
                 <span>الخصوص - شارع الجسر الغربي _ بجوار بنزينة الخصوص</span>
             </div>
 
