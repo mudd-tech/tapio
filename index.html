@@ -36,11 +36,10 @@
             padding-bottom: 25px;
         }
 
-        /* بنر واجهة المحل العلوي */
         .store-banner-box {
             width: 100%;
             height: 150px;
-            background: linear-gradient(135deg, #1b3825, #0f2317);
+            background: linear-gradient(135deg, #1b3825, #0d1f14);
             position: relative;
             border-bottom: 3px solid #22c55e;
             overflow: hidden;
@@ -55,7 +54,7 @@
         .content-area {
             padding: 0 20px;
             text-align: center;
-            margin-top: -45px; /* تداخل اللوجو بانسجام تام مع البنر */
+            margin-top: -45px;
             position: relative;
             z-index: 2;
         }
@@ -269,7 +268,6 @@
             font-weight: 600;
         }
 
-        /* نافذة الأرقام المنبثقة */
         .modal {
             display: none;
             position: fixed;
@@ -338,13 +336,12 @@
 <body>
 
     <div class="container">
-        <!-- بنر واجهة المحل العلوي -->
+        <!-- تم تعديل اسم الصورة لتطابق اللي عندك في جيثب store_front.jpg -->
         <div class="store-banner-box">
-            <img src="store-front.JPG" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
+            <img src="store_front.jpg" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
         </div>
 
         <div class="content-area">
-            <!-- اللوجو الشخصي متداخل بفخامة مع البنر -->
             <div class="profile-wrapper">
                 <img src="logo.JPG" alt="الوزير ستور" class="profile-img" onerror="this.src='https://via.placeholder.com/100?text=Logo'">
             </div>
