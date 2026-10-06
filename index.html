@@ -36,7 +36,6 @@
             padding-bottom: 28px;
         }
 
-        /* تكبير واجهة المحل وظهورها بشكل أوسع وأوضح */
         .store-banner-box {
             width: 100%;
             height: 220px;
@@ -311,6 +310,56 @@
             color: #d4af37;
             font-weight: 700;
         }
+        
+        /* تنسيق كارد المحفظة وزر النسخ */
+        .wallet-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .wallet-name {
+            font-weight: 700;
+            color: #f1c40f;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .wallet-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+        }
+        .wallet-number {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        .copy-btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .copy-btn:hover {
+            background: #f39c12;
+        }
+        .copy-btn.copied {
+            background: #22c55e;
+            color: #fff;
+        }
+
         .number-option {
             display: block;
             background: rgba(212, 175, 55, 0.05);
@@ -320,26 +369,15 @@
             border-radius: 12px;
             margin-bottom: 10px;
             text-decoration: none;
-            text-align: right;
+            text-align: center;
+            font-weight: 600;
             transition: 0.2s;
         }
         .number-option:hover {
             background: rgba(212, 175, 55, 0.15);
             border-color: #d4af37;
         }
-        .wallet-name {
-            font-weight: 700;
-            color: #f1c40f;
-            font-size: 0.95rem;
-            display: block;
-            margin-bottom: 3px;
-        }
-        .wallet-details {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            display: flex;
-            justify-content: space-between;
-        }
+
         .close-modal {
             background: transparent;
             border: none;
@@ -357,7 +395,7 @@
 <body>
 
     <div class="container">
-        <!-- بنر واجهة المحل المكبر والمنسق -->
+        <!-- بنر واجهة المحل -->
         <div class="store-banner-box">
             <img src="store_front.jpg" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
         </div>
@@ -429,7 +467,7 @@
         </div>
     </div>
 
-    <!-- نافذة الأرقام المنبثقة -->
+    <!-- نافذة الخيارات المنبثقة -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <h3 id="modalTitle" class="modal-title">اختر</h3>
@@ -442,6 +480,7 @@
         const phone1 = "201228855105";
         const phone2 = "201009934519";
 
+        // يمكنك تعديل أرقام المحافظ والأسماء بكل سهولة من هنا
         const wallets = [
             { name: "فودافون كاش", number: "01009934519", owner: "محمد أحمد" },
             { name: "فودافون كاش", number: "01228855105", owner: "محمود أحمد" }
@@ -456,30 +495,43 @@
 
             if (type === 'wallets') {
                 title.innerText = "اختر محفظة لتحويل المبلغ:";
-                wallets.forEach(w => {
+                wallets.forEach((w, index) => {
                     options.innerHTML += `
-                        <a href="tel:${w.number}" class="number-option">
-                            <span class="wallet-name"><i class="fa-solid fa-wallet" style="color:#d4af37; margin-left:6px;"></i> ${w.name}</span>
-                            <div class="wallet-details">
-                                <span>الرقم: <strong>${w.number}</strong></span>
-                                <span>الاسم: <strong>${w.owner}</strong></span>
+                        <div class="wallet-card">
+                            <span class="wallet-name"><i class="fa-solid fa-wallet" style="color:#d4af37; margin-left:6px;"></i> ${w.name} (${w.owner})</span>
+                            <div class="wallet-row">
+                                <span class="wallet-number" id="walletNum${index}">${w.number}</span>
+                                <button class="copy-btn" onclick="copyWalletNumber('${w.number}', this)"><i class="fa-regular fa-copy"></i> نسخ الرقم</button>
                             </div>
-                        </a>
+                        </div>
                     `;
                 });
             } else if (type === 'whatsapp') {
                 title.innerText = "اختر رقم الواتساب للتواصل:";
                 options.innerHTML = `
-                    <a href="https://wa.me/${phone1}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
-                    <a href="https://wa.me/${phone2}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
+                    <a href="https://wa.me/${phone1}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://wa.me/${phone2}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             } else if (type === 'telegram') {
                 title.innerText = "اختر الرقم للتواصل عبر التليجرام:";
                 options.innerHTML = `
-                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
-                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option" style="text-align:center;"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
+                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             }
+        }
+
+        // دالة نسخ الرقم بضغطة زر واحدة
+        function copyWalletNumber(number, btnElement) {
+            navigator.clipboard.writeText(number).then(() => {
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fa-solid fa-check"></i> تم النسخ!';
+                btnElement.classList.add('copied');
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.classList.remove('copied');
+                }, 2000);
+            });
         }
 
         function closeModal() {
