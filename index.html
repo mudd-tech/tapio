@@ -10,11 +10,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
         }
 
         body {
-            background-color: #0f1711;
+            background: radial-gradient(circle at center, #111e15 0%, #080c09 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -25,44 +25,78 @@
 
         .container {
             width: 100%;
-            max-width: 440px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 30px 20px;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 28px;
+            overflow: hidden; /* عشان صورة الغلاف تاخد حواف الكارد المدوّرة */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            padding-bottom: 30px;
+        }
+
+        /* واجهة المحل كصورة غلاف في أعلى الكارد */
+        .store-banner {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 3px solid #22c55e;
+            background-color: #1a2e22;
+        }
+
+        .content-area {
+            padding: 0 22px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            margin-top: -50px; /* تداخل اللوجو مع الغلاف بشكل شيك */
+        }
+
+        .profile-wrapper {
+            position: relative;
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 15px;
         }
 
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #22c55e;
-            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
             background-color: #fff;
         }
 
         h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            font-size: 1.75rem;
+            margin-bottom: 4px;
             color: #ffffff;
             font-weight: 700;
         }
 
         .slogan {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #4ade80;
             font-weight: 600;
             margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .header-address {
             font-size: 0.85rem;
-            color: #cbd5e1;
-            margin-bottom: 20px;
+            color: #94a3b8;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             line-height: 1.5;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .links-list {
@@ -75,37 +109,51 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 18px;
-            border-radius: 14px;
+            padding: 15px 20px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            transition: 0.2s;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .btn-instapay {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: #fff;
+            border-color: rgba(124, 58, 237, 0.3);
             justify-content: center;
             gap: 10px;
+            font-size: 1rem;
         }
 
         .btn-wallet {
             background: linear-gradient(135deg, #e11d48, #f43f5e);
             color: #fff;
+            border-color: rgba(244, 63, 94, 0.3);
             justify-content: center;
             gap: 10px;
+            font-size: 1rem;
         }
 
         .btn-location {
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(239, 68, 68, 0.08);
             color: #f87171;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-color: rgba(239, 68, 68, 0.2);
             justify-content: center;
             gap: 10px;
+        }
+        .btn-location:hover {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fff;
         }
 
         .row-btns {
@@ -117,186 +165,242 @@
             flex: 1;
             justify-content: center;
             padding: 14px 10px;
+            gap: 8px;
         }
 
         .btn-whatsapp {
-            background: rgba(37, 211, 102, 0.15);
+            background: rgba(37, 211, 102, 0.08);
             color: #25d366;
-            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-color: rgba(37, 211, 102, 0.2);
+        }
+        .btn-whatsapp:hover {
+            background: #25d366;
+            color: #fff;
         }
 
         .btn-telegram {
-            background: rgba(0, 136, 204, 0.15);
-            color: #0088cc;
-            border: 1px solid rgba(0, 136, 204, 0.3);
+            background: rgba(0, 136, 204, 0.08);
+            color: #38bdf8;
+            border-color: rgba(0, 136, 204, 0.2);
+        }
+        .btn-telegram:hover {
+            background: #0088cc;
+            color: #fff;
         }
 
         .btn-facebook {
-            background: rgba(24, 119, 242, 0.15);
-            color: #1877f2;
-            border: 1px solid rgba(24, 119, 242, 0.3);
+            background: rgba(24, 119, 242, 0.08);
+            color: #60a5fa;
+            border-color: rgba(24, 119, 242, 0.2);
+        }
+        .btn-facebook:hover {
+            background: #1877f2;
+            color: #fff;
         }
 
         .btn-tiktok {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .btn-tiktok:hover {
+            background: #ffffff;
+            color: #000000;
         }
 
         .btn-phone {
-            background: rgba(16, 185, 129, 0.15);
+            background: rgba(16, 185, 129, 0.08);
             color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-color: rgba(16, 185, 129, 0.2);
             justify-content: center;
             gap: 10px;
         }
+        .btn-phone:hover {
+            background: #10b981;
+            color: #fff;
+        }
 
         .promo-box {
-            background: rgba(255, 255, 255, 0.03);
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(16, 185, 129, 0.1));
             border: 1px dashed rgba(34, 197, 94, 0.4);
-            border-radius: 14px;
-            padding: 14px;
-            margin-top: 5px;
+            border-radius: 18px;
+            padding: 18px 14px;
+            margin-top: 6px;
             text-align: center;
         }
 
         .promo-text {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            margin-bottom: 10px;
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            margin-bottom: 12px;
+            font-weight: 500;
         }
 
         .btn-promo {
-            background: #22c55e;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
             color: #fff;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: block;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            transition: 0.3s;
+        }
+        .btn-promo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 24px;
             font-size: 0.8rem;
-            color: #94a3b8;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 12px;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
         }
         footer span {
             color: #4ade80;
             font-weight: 600;
         }
 
-        /* نافذة الأرقام */
+        /* نافذة الأرقام المنبثقة */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
             z-index: 1000;
             padding: 20px;
         }
         .modal-content {
-            background: #18221c;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
+            background: #111a14;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
             width: 100%;
             max-width: 340px;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            animation: scaleUp 0.3s ease;
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         .modal-title {
-            font-size: 1rem;
-            margin-bottom: 15px;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
             color: #fff;
+            font-weight: 600;
         }
         .number-option {
-            display: block;
-            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 8px;
+            padding: 13px;
+            border-radius: 14px;
+            margin-bottom: 10px;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.2s;
+        }
+        .number-option:hover {
+            background: #22c55e;
+            border-color: #22c55e;
         }
         .close-modal {
             background: transparent;
             border: none;
             color: #94a3b8;
-            margin-top: 10px;
+            margin-top: 12px;
             cursor: pointer;
             font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .close-modal:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- اللوجو بالامتداد الصحيح logo.JPG -->
-        <img src="logo.JPG" alt="الوزير ستور" class="profile-img" onerror="this.src='https://via.placeholder.com/110?text=Logo'">
-        
-        <h1>الوزير ستور</h1>
-        <p class="slogan">ثقة - أمان - توفير</p>
+        <!-- واجهة المحل كصورة غلاف في أعلى الموقع -->
+        <img src="store-front.JPG" alt="واجهة الوزير ستور" class="store-banner" onerror="this.style.display='none'">
 
-        <div class="header-address">
-            <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i>
-            الخصوص - شارع الجسر الغربي _ بجوار بنزينة الخصوص
+        <div class="content-area">
+            <!-- اللوجو الشخصي متداخل مع الغلاف بشكل فخم -->
+            <div class="profile-wrapper">
+                <img src="logo.JPG" alt="الوزير ستور" class="profile-img" onerror="this.src='https://via.placeholder.com/105?text=Logo'">
+            </div>
+            
+            <h1>الوزير ستور</h1>
+            <p class="slogan">ثقة - أمان - توفير</p>
+
+            <div class="header-address">
+                <i class="fa-solid fa-location-dot" style="color: #ef4444; font-size: 1rem;"></i>
+                <span>الخصوص - شارع الجسر الغربي _ بجوار بنزينة الخصوص</span>
+            </div>
+
+            <div class="links-list">
+                <a href="https://ipn.eg/S/your-username/instapay" target="_blank" class="btn btn-instapay">
+                    <i class="fa-solid fa-bolt" style="color: #facc15;"></i>
+                    <span>الدفع الفوري عبر InstaPay</span>
+                </a>
+
+                <a href="tel:01009934519" class="btn btn-wallet">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>تحويل فودافون كاش / المحافظ</span>
+                </a>
+
+                <a href="https://maps.app.goo.gl/9tm8z3fPvrWPwrwA9?g_st=ic" target="_blank" class="btn btn-location">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>فتح العنوان على خريطة جوجل</span>
+                </a>
+
+                <a href="tel:01009934519" class="btn btn-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>اتصال هاتفي (01009934519)</span>
+                </a>
+
+                <div class="row-btns">
+                    <button onclick="openModal('whatsapp')" class="btn btn-half btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> واتساب
+                    </button>
+                    <button onclick="openModal('telegram')" class="btn btn-half btn-telegram">
+                        <i class="fa-brands fa-telegram" style="font-size: 1.2rem;"></i> تليجرام
+                    </button>
+                </div>
+
+                <div class="row-btns">
+                    <a href="https://www.facebook.com/share/1E3Xb63cjq/?mibextid=wwXIfr" target="_blank" class="btn btn-half btn-facebook">
+                        <i class="fa-brands fa-facebook-f"></i> فيسبوك
+                    </a>
+                    <a href="https://www.tiktok.com/@elwazer_store?_r=1&_t=ZS-9AJOR7JlZKP" target="_blank" class="btn btn-half btn-tiktok">
+                        <i class="fa-brands fa-tiktok"></i> تيك توك
+                    </a>
+                </div>
+
+                <div class="promo-box">
+                    <p class="promo-text">عجبك الستاند الذكي وحابب تعمل واحد لمشروعك؟ 🚀</p>
+                    <a href="https://wa.me/201284424161?text=السلام عليكم، عجبني الستاند الذكي الخاص بكم وكنت أود الاستفسار عن تفاصيل وأسعار عمل ستاند لمشروعي." target="_blank" class="btn-promo">
+                        ✨ احصل على ستاند ذكي لمشروعك الآن
+                    </a>
+                </div>
+            </div>
+
+            <footer>
+                Powered by <span>tapio</span> &copy; 2026
+            </footer>
         </div>
-
-        <div class="links-list">
-            <a href="https://ipn.eg/S/your-username/instapay" target="_blank" class="btn btn-instapay">
-                <i class="fa-solid fa-bolt" style="color: #facc15;"></i>
-                <span>الدفع الفوري عبر InstaPay</span>
-            </a>
-
-            <a href="tel:01009934519" class="btn btn-wallet">
-                <i class="fa-solid fa-wallet"></i>
-                <span>تحويل فودافون كاش / المحافظ</span>
-            </a>
-
-            <a href="https://maps.app.goo.gl/9tm8z3fPvrWPwrwA9?g_st=ic" target="_blank" class="btn btn-location">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <span>فتح العنوان على خريطة جوجل</span>
-            </a>
-
-            <a href="tel:01009934519" class="btn btn-phone">
-                <i class="fa-solid fa-phone"></i>
-                <span>اتصال هاتفي (01009934519)</span>
-            </a>
-
-            <div class="row-btns">
-                <button onclick="openModal('whatsapp')" class="btn btn-half btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i> واتساب
-                </button>
-                <button onclick="openModal('telegram')" class="btn btn-half btn-telegram">
-                    <i class="fa-brands fa-telegram" style="font-size: 1.1rem;"></i> تليجرام
-                </button>
-            </div>
-
-            <div class="row-btns">
-                <a href="https://www.facebook.com/share/1E3Xb63cjq/?mibextid=wwXIfr" target="_blank" class="btn btn-half btn-facebook">
-                    <i class="fa-brands fa-facebook-f"></i> فيسبوك
-                </a>
-                <a href="https://www.tiktok.com/@elwazer_store?_r=1&_t=ZS-9AJOR7JlZKP" target="_blank" class="btn btn-half btn-tiktok">
-                    <i class="fa-brands fa-tiktok"></i> تيك توك
-                </a>
-            </div>
-
-            <div class="promo-box">
-                <p class="promo-text">عجبك الستاند الذكي وحابب تعمل واحد لمشروعك؟ 🚀</p>
-                <a href="https://wa.me/201284424161?text=السلام عليكم، عجبني الستاند الذكي الخاص بكم وكنت أود الاستفسار عن تفاصيل وأسعار عمل ستاند لمشروعي." target="_blank" class="btn-promo">
-                    ✨ احصل على ستاند ذكي لمشروعك الآن
-                </a>
-            </div>
-        </div>
-
-        <footer>
-            Powered by <span>tapio</span> &copy; 2026
-        </footer>
     </div>
 
     <!-- نافذة الأرقام -->
@@ -322,14 +426,14 @@
             if (type === 'whatsapp') {
                 title.innerText = "اختر رقم الواتساب للتواصل:";
                 options.innerHTML = `
-                    <a href="https://wa.me/${phone1}?text=السلام عليكم" target="_blank" class="number-option">الرقم الأول: 01228855105</a>
-                    <a href="https://wa.me/${phone2}?text=السلام عليكم" target="_blank" class="number-option">الرقم الثاني: 01009934519</a>
+                    <a href="https://wa.me/${phone1}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://wa.me/${phone2}?text=السلام عليكم، أواصل معكم من خلال موقعكم الإلكتروني." target="_blank" class="number-option"><i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             } else if (type === 'telegram') {
                 title.innerText = "اختر الرقم للتواصل عبر التليجرام:";
                 options.innerHTML = `
-                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option">الرقم الأول: 01228855105</a>
-                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option">الرقم الثاني: 01009934519</a>
+                    <a href="https://t.me/+${phone1}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الأول: 01228855105</a>
+                    <a href="https://t.me/+${phone2}" target="_blank" class="number-option"><i class="fa-brands fa-telegram" style="color:#38bdf8; font-size:1.1rem;"></i> الرقم الثاني: 01009934519</a>
                 `;
             }
         }
